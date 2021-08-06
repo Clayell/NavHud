@@ -1,5 +1,11 @@
 ChangeLog
 
+1.4.0.5
+	Renamed DLL for CKAN compatibility
+	Added AssemblyFileVersion
+	Updated version file for 1.12
+
+
 1.4.0.4
 	Fixed the order of initialization.  
 		In NavHud.cs, moved the initial initialization up to the AddComponent into an Awake(), 
