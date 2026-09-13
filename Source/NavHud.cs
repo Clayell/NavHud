@@ -106,6 +106,7 @@ namespace NavHud
                 {
                     _arrowsEnabled = value;
                     _behaviour.ArrowsEnabled = value;
+                    StartCoroutine(ToggleMarkers());
                 }
             }
         }
@@ -838,6 +839,15 @@ namespace NavHud
         }
 
         #endregion
+
+        // this is so jank but the codebase is so bad so its the best way to do this
+        private IEnumerator ToggleMarkers()
+        {
+            yield return new WaitForEndOfFrame();
+            MarkersEnabled = !MarkersEnabled;
+            yield return new WaitForEndOfFrame();
+            MarkersEnabled = !MarkersEnabled;
+        }
 
         void OnDestroy()
         {
